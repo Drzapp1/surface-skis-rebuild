@@ -1,7 +1,13 @@
-# Surface Skis — rebuild concept (demo)
+## License / Usage
 
-A design-concept rebuild of surfaceskis.com, published as a single self-contained page.
+This is an unofficial concept/mockup for Surface Skis.
 
-**Unofficial.** This is a pitch/design demo — not affiliated with, authorized by, or endorsed by
-Surface Skis. Product imagery and brand marks are © Surface Skis and shown here for demonstration
-purposes only.
+All Surface Skis names, logos, product images, rider images, product copy,
+and other brand assets remain the property of Surface Skis and/or their
+respective owners.
+
+All original code and concept work by Adam Rosta is © 2026 Adam Rosta.
+All rights reserved.
+
+No permission is granted to reuse, copy, redistribute, sell, or deploy this
+project without written permission.
