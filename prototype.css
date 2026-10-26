@@ -1,0 +1,10 @@
+/* The original design is intact; give the reduced team selection room. */
+.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.strip{max-width:var(--max);margin:0 auto}
+.strip .rider{flex:1;min-width:0}
+.rider__name{display:block}
+.cmp-h,.cmp-corner{position:static}
+@media(max-width:640px){
+  .team-grid{grid-template-columns:1fr}
+  .strip{display:grid;grid-template-columns:1fr;gap:24px}
+}
