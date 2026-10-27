@@ -13,7 +13,7 @@
 .sec{padding:clamp(40px,5vw,64px) 0}
 .filmstrip{padding:0}
 .filmstrip .wrap{padding:0}
-.filmstrip__frame{max-width:none;height:auto;aspect-ratio:16/9;margin:0;border:0}
+.filmstrip__frame{width:90%;max-width:1040px;height:auto;aspect-ratio:16/9;margin:0 auto;border:0}
 .filmstrip__frame iframe{width:100%;height:100%;inset:0;transform:none}
 .filmstrip__overlay{padding:clamp(18px,3vw,44px) var(--pad);flex-direction:row;align-items:flex-end;justify-content:space-between;gap:20px}
 .filmstrip__overlay h2{margin-bottom:0}
