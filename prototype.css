@@ -1,5 +1,7 @@
 /* Original hero treatment, fluid layouts, and restrained content sizing. */
 :root{--max:none;--pad:clamp(18px,2vw,40px)}
+.nav .logo{font-family:var(--display);font-size:36px;font-weight:400;line-height:1;letter-spacing:0;gap:8px}
+.nav .logo em{font-family:var(--mono);font-size:9px;letter-spacing:.18em}
 .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .card__art img{height:clamp(244px,21vw,340px)}
 .card h3{font-size:clamp(25px,2vw,32px)}

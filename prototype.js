@@ -27,6 +27,12 @@
     if (!main || main === lastMain) return;
     lastMain = main;
 
+    const logo = app.querySelector('.nav .logo');
+    if (logo) {
+      logo.innerHTML = '<span>surface</span><em>skis</em>';
+      logo.setAttribute('aria-label', 'Surface Skis home');
+    }
+
     app.querySelectorAll([
       '.ticker', '.hero__meta', '.hero__credit', '.soon-sec', '.aibub',
       '.foot__mega', '.foot__brand',
