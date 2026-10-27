@@ -34,8 +34,8 @@
 .home-skis .sec__head h2{font-size:clamp(52px,8vw,112px);transform:rotate(-2deg);transform-origin:left bottom}
 .home-skis .card:nth-child(even){translate:0 10px}
 .home-skis .card__stamp{color:var(--accent);border-color:var(--gold)}
-.home-team{--dim:#ada58f;--line:#3b3326;position:relative;background:#17130f;border:0}
-.home-team::before{content:"";position:absolute;inset:-11px 0 auto;height:14px;background:var(--accent);clip-path:polygon(0 50%,4% 25%,9% 60%,14% 35%,20% 55%,27% 10%,34% 45%,41% 20%,49% 55%,57% 25%,64% 50%,73% 15%,81% 45%,89% 20%,96% 50%,100% 30%,100% 100%,0 100%);pointer-events:none}
+.home-team{--dim:#ada58f;--line:#3b3326;position:relative;background:#17130f;border:0;border-top:1px solid #544728}
+.home-team::before{content:"";position:absolute;inset:-2px auto auto var(--pad);width:72px;height:3px;background:var(--gold);clip-path:polygon(0 0,100% 0,94% 100%,0 100%);pointer-events:none}
 .home-team .sec__head h2{font-size:clamp(50px,7.5vw,104px);transform:skewX(-6deg);color:var(--accent)}
 .home-team .rider__name{font-weight:400}
 .home-skis,.home-team{color:var(--ink)}
