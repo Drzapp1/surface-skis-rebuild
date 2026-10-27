@@ -19,9 +19,11 @@
 .filmstrip__overlay h2{margin-bottom:0}
 .filmstrip__overlay h2{font-size:clamp(32px,5vw,64px)}
 .vids{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
-.team-grid,.strip{display:grid;grid-template-columns:repeat(3,minmax(0,280px));justify-content:center;gap:clamp(20px,4vw,64px)}
-.team-grid{padding-bottom:clamp(40px,5vw,64px)}
-.strip{max-width:var(--max);margin:0 auto}
+.team-grid,.strip{display:grid;grid-template-columns:repeat(3,minmax(0,280px));justify-content:center;gap:clamp(8px,1.2vw,18px)}
+.team-grid{padding-bottom:32px}
+.strip{max-width:var(--max);margin:0 auto;padding-block:0;overflow:visible}
+.sec:has(.strip){padding-block:32px}
+.sec:has(.strip) .sec__head{margin-bottom:20px}
 .strip .rider{min-width:0}
 .rider{background:none;border:0;padding:0}
 .rider__name{display:block}
@@ -42,7 +44,8 @@
   .filmstrip__cta .btn{padding:10px 12px;font-size:11px}
 }
 @media(max-width:640px){
-  .team-grid,.strip{grid-template-columns:minmax(0,240px);gap:24px}
+  .team-grid,.strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rider__name{font-size:clamp(12px,2.7vw,18px);line-height:1.1;overflow-wrap:anywhere}
   .foot__cols{gap:16px}
   .foot__cols a{font-size:13px}
 }
