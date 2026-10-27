@@ -22,6 +22,10 @@
   const app = document.getElementById('app');
   let lastMain;
   function trimPage() {
+    const emptyCart = app.querySelector('.drawer__empty');
+    if (emptyCart && emptyCart.textContent !== 'Your cart is empty.') {
+      emptyCart.textContent = 'Your cart is empty.';
+    }
     const main = app.querySelector('main');
     // The original app replaces main on navigation. Ignore meter/cart updates.
     if (!main || main === lastMain) return;
@@ -37,10 +41,11 @@
       '.ticker', '.hero__meta', '.hero__credit', '.soon-sec', '.aibub',
       '.foot__mega', '.foot__brand',
       '.page-hero > .eyebrow', '.page-hero > .sub',
-      '.sec__head .eyebrow', '.news > .eyebrow',
+      '.sec__head .eyebrow', '.news > .eyebrow', '.pd__ship',
       '.card__meta', '.card__spec', '.foot__brand p',
       '.nav__links .hot', '.shop-season__head',
-      '.filters [data-action="filter"]', '.rider__pro', '.faq-nav a[href^="#faq-"]'
+      '.filters [data-action="filter"]', '.filters .spacer', '.rider__pro',
+      '.faq-nav', '.faq-sec > h2', '.drawer__note'
     ].join(',')).forEach(element => element.remove());
 
     const headline = main.querySelector('.hero__mega');
@@ -57,6 +62,7 @@
 
     main.querySelectorAll('.grid').forEach(grid => {
       if (!grid.children.length) grid.closest('section')?.remove();
+      grid.classList.toggle('grid--three', grid.children.length === 3);
     });
     main.querySelector('.ambass')?.closest('section')?.remove();
     const footer = app.querySelector('.foot');
@@ -76,6 +82,20 @@
     main.querySelectorAll('.specsheet h4 span').forEach(span => {
       if (span.textContent === 'where it wants to be' || /in the range$/.test(span.textContent)) span.remove();
     });
+    const specTable = main.querySelector('.spec-table');
+    if (specTable) {
+      const tableWrap = document.createElement('div');
+      tableWrap.className = 'spec-table-wrap';
+      tableWrap.tabIndex = 0;
+      tableWrap.setAttribute('role', 'region');
+      tableWrap.setAttribute('aria-label', 'Ski specifications by length');
+      specTable.before(tableWrap);
+      tableWrap.append(specTable);
+      const specLabel = main.querySelector('.rowlabel');
+      if (specLabel) specLabel.innerHTML = '<span>Specifications</span>';
+    }
+    const teamLink = main.querySelector('.home-team .sec__head .more');
+    if (teamLink) teamLink.textContent = 'Team →';
     main.querySelectorAll('.faq-sec details').forEach(details => { details.open = false; });
   }
   new MutationObserver(trimPage).observe(app, { childList: true, subtree: true });

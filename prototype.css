@@ -1,8 +1,12 @@
 /* Original hero treatment, fluid layouts, and restrained content sizing. */
 :root{--max:none;--pad:clamp(18px,2vw,40px)}
+#app{min-height:100svh;display:flex;flex-direction:column}
+#app > main{flex:1}
+.nav{flex-shrink:0}
 .nav .logo{font-family:var(--display);font-size:36px;font-weight:400;line-height:1;letter-spacing:0;gap:8px}
 .nav .logo em{font-family:var(--mono);font-size:9px;letter-spacing:.18em}
 .grid{grid-template-columns:repeat(4,minmax(0,240px));justify-content:center;gap:clamp(14px,3vw,48px)}
+.grid--three{grid-template-columns:repeat(3,minmax(0,240px))}
 .card{background:none;border:0;padding:0}
 .card__art{background:none;border:0;padding:0}
 .card__art img{width:100%;height:auto}
@@ -39,12 +43,40 @@
 .home-team .sec__head h2{font-size:clamp(50px,7.5vw,104px);transform:skewX(-6deg);color:var(--accent)}
 .home-team .rider__name{font-weight:400}
 .home-skis,.home-team{color:var(--ink)}
-.cmp-h,.cmp-corner{position:static}
+.page-hero{padding-top:clamp(32px,4vw,56px);padding-bottom:24px}
+.page-hero h1{font-size:clamp(54px,8vw,112px)}
+.faq-cols{display:block;max-width:960px}
+.page-hero:has(+ .faq-cols){max-width:960px}
+.faq-sec{margin-bottom:32px}
+.pd__stage{padding:0;min-height:0;background:none;border:0}
+.pd__stage img{animation:none}
+.specsheet__col{min-width:0}
+.spec-table-wrap{max-width:100%;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--gold) var(--line)}
+.spec-table{min-width:360px}
+.cmp-h{position:relative;top:auto;padding-top:28px}
+.cmp-corner{position:static}
+.cmp-h__rm{width:30px;height:30px;top:3px;right:3px;font-size:16px}
+.cmp-h__img img{height:88px}
+.cmp-h__name{font-size:20px}
+.nav__links a{color:#a49e91}
 .foot{padding:22px 0;border-top:1px solid var(--gold)}
 .foot__compact{display:flex;justify-content:flex-end;align-items:center;gap:clamp(18px,3vw,48px)}
 .foot__compact a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
 .foot__compact a:first-child{margin-right:auto}
 .foot__compact a:hover{color:var(--accent)}
+@media(min-width:980px){
+  .page-hero--clip{min-height:224px}
+  .page-hero--clip .toss--pin{width:clamp(218px,20vw,280px)}
+}
+@media(min-width:720px) and (max-width:979px){
+  .page-hero--clip{min-height:200px;padding-right:250px}
+  .page-hero--clip .toss--pin{position:absolute;top:50%;right:var(--pad);width:210px;margin:0}
+  .page-hero--clip .toss--pin.rv.in{transform:translateY(-50%) rotate(var(--rot))}
+}
+@media(max-width:700px){
+  .cmp-table{min-width:0;grid-template-columns:64px repeat(var(--n),minmax(0,1fr))}
+  .pd__stage img{max-height:320px}
+}
 @media(max-width:1100px){
   .grid{grid-template-columns:repeat(2,minmax(0,240px))}
 }
@@ -53,6 +85,8 @@
   .rider__name{font-size:clamp(12px,2.7vw,18px);line-height:1.1;overflow-wrap:anywhere}
 }
 @media(max-width:460px){
+  .nav__row{gap:8px}
+  .burger,.cartbtn{padding-inline:7px}
   .grid{grid-template-columns:repeat(2,minmax(0,180px));gap:12px}
   .card h3{font-size:24px}
   .card__stamp{font-size:8px;right:5px;padding:3px 5px}
