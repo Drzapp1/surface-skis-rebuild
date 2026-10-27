@@ -54,6 +54,8 @@
     if (filmTitle) {
       filmTitle.textContent = 'Woodward';
       filmTitle.dataset.t = 'Woodward';
+      const caption = filmTitle.closest('.filmstrip__overlay');
+      caption.closest('.filmstrip__frame').after(caption);
     }
 
     main.querySelectorAll('.grid').forEach(grid => {
