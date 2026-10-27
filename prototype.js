@@ -28,7 +28,8 @@
     lastMain = main;
 
     app.querySelectorAll([
-      '.ticker', '.hero__meta', '.soon-sec', '.aibub',
+      '.ticker', '.hero__meta', '.hero__credit', '.soon-sec', '.aibub',
+      '.foot__mega', '.foot__brand',
       '.page-hero > .eyebrow', '.page-hero > .sub',
       '.sec__head .eyebrow', '.news > .eyebrow',
       '.card__meta', '.card__spec', '.foot__brand p',
