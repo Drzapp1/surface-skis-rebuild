@@ -49,14 +49,10 @@
       main.querySelector('.hero__content > .eyebrow').textContent = 'Surface Skis';
       main.querySelector('.hero__cta .btn--accent').textContent = 'View skis';
       document.title = 'Surface Skis · W27';
+      main.querySelector('.grid')?.closest('section')?.classList.add('home-skis');
+      main.querySelector('.strip')?.closest('section')?.classList.add('home-team');
     }
-    const filmTitle = main.querySelector('.filmstrip__overlay h2');
-    if (filmTitle) {
-      filmTitle.textContent = 'Woodward';
-      filmTitle.dataset.t = 'Woodward';
-      const caption = filmTitle.closest('.filmstrip__overlay');
-      caption.closest('.filmstrip__frame').after(caption);
-    }
+    main.querySelector('.filmstrip__overlay')?.remove();
 
     main.querySelectorAll('.grid').forEach(grid => {
       if (!grid.children.length) grid.closest('section')?.remove();
