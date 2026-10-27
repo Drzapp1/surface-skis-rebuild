@@ -4,12 +4,18 @@
 .card__art img{height:clamp(244px,21vw,340px)}
 .card h3{font-size:clamp(25px,2vw,32px)}
 .sec{padding:clamp(40px,5vw,64px) 0}
+.filmstrip{padding-block:clamp(24px,3vw,40px)}
+.filmstrip__frame{max-width:900px}
+.filmstrip__overlay{padding:clamp(18px,3vw,28px)}
+.filmstrip__overlay h2{font-size:clamp(32px,5vw,64px)}
 .vids{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
 .team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .strip{max-width:var(--max);margin:0 auto}
 .strip .rider{flex:1;min-width:0}
 .rider__name{display:block}
 .rider__ph{display:block;width:100%;height:clamp(280px,34vw,420px);aspect-ratio:auto}
+.rider__ph img{object-fit:contain}
+.rider:hover .rider__ph img{transform:none}
 .cmp-h,.cmp-corner{position:static}
 .foot{padding:32px 0 24px}
 .foot__cols{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:24px}
