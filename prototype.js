@@ -53,16 +53,19 @@
       main.querySelector('.strip')?.closest('section')?.classList.add('home-team');
     }
     main.querySelector('.filmstrip__overlay')?.remove();
+    main.querySelector('.news')?.closest('section')?.remove();
 
     main.querySelectorAll('.grid').forEach(grid => {
       if (!grid.children.length) grid.closest('section')?.remove();
     });
     main.querySelector('.ambass')?.closest('section')?.remove();
-    app.querySelectorAll('.foot a').forEach(link => {
-      if (/\/shop\/W2[56]$/.test(link.getAttribute('href') || '')) link.remove();
-    });
-    const footerNote = app.querySelector('.foot__base > span:last-child');
-    if (footerNote) footerNote.textContent = 'Unofficial concept';
+    const footer = app.querySelector('.foot');
+    if (footer) footer.innerHTML = `
+      <nav class="wrap foot__compact" aria-label="Contact and social links">
+        <a href="mailto:surface@surfaceskis.com">Contact ↗</a>
+        <a href="https://www.instagram.com/surfaceskis" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.youtube.com/c/SURFACESKIS1" target="_blank" rel="noopener">YouTube ↗</a>
+      </nav>`;
 
     // The selected riders' pro models are outside this small catalog.
     main.querySelectorAll('.rider[href*="/product/"]').forEach(link => {
